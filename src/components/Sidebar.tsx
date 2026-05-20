@@ -34,17 +34,17 @@ export const Sidebar: React.FC<SidebarProps> = ({
             {/* Sidebar */}
             <div
                 className={`${isOpen ? 'translate-x-0' : '-translate-x-full'
-                    } md:translate-x-0 fixed md:relative w-72 h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-800 text-white transition-transform duration-300 z-40 shadow-2xl flex flex-col border-r border-white/10`}
+                    } md:translate-x-0 fixed md:relative w-72 h-screen bg-white text-slate-900 transition-transform duration-300 z-40 shadow-2xl flex flex-col border-r border-slate-200`}
             >
                 {/* Logo */}
-                <div className="p-6 border-b border-white/10">
+                <div className="p-6 border-b border-slate-200">
                     <div className="flex items-center gap-3">
                         <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-cyan-400 to-teal-500 flex items-center justify-center shadow-lg">
                             <span className="text-white font-bold text-lg">A</span>
                         </div>
                         <div>
-                            <h1 className="text-lg font-semibold tracking-tight">Allocations</h1>
-                            <p className="text-xs text-slate-300">Support Operations</p>
+                            <h1 className="text-lg font-semibold tracking-tight text-slate-900">Allocations</h1>
+                            <p className="text-xs text-slate-600">Support Operations</p>
                         </div>
                     </div>
                 </div>
@@ -52,7 +52,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 {/* Menu Items */}
                 <nav className="flex-1 px-4 py-5 space-y-5">
                     <div>
-                        <p className="px-4 text-xs uppercase tracking-[0.2em] text-slate-400">Workspace</p>
+                        <p className="px-4 text-xs uppercase tracking-[0.2em] text-slate-700 font-semibold">Workspace</p>
                         <div className="mt-3 space-y-2">
                             {menuItems.map((item) => (
                                 <button
@@ -64,8 +64,8 @@ export const Sidebar: React.FC<SidebarProps> = ({
                                         }
                                     }}
                                     className={`w-full text-left px-4 py-3.5 rounded-xl transition-all duration-200 flex items-center gap-3 ${activeMenu === item.id
-                                        ? 'bg-white text-slate-900 font-semibold shadow-lg'
-                                        : 'text-slate-200 hover:bg-white/10'
+                                        ? 'bg-cyan-600 text-white font-semibold shadow-lg'
+                                        : 'text-slate-900 hover:bg-slate-200'
                                         }`}
                                 >
                                     <span className="text-xl">{item.icon}</span>
@@ -75,22 +75,22 @@ export const Sidebar: React.FC<SidebarProps> = ({
                         </div>
                     </div>
 
-                    <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
-                        <p className="text-xs text-slate-300">Active Queue</p>
-                        <p className="mt-2 text-2xl font-semibold">18</p>
-                        <p className="text-xs text-emerald-300">+4 new today</p>
+                    <div className="rounded-2xl border border-cyan-300 bg-cyan-50 p-4">
+                        <p className="text-xs text-slate-700 font-semibold">Active Queue</p>
+                        <p className="mt-2 text-2xl font-bold text-slate-900">18</p>
+                        <p className="text-xs text-emerald-600 font-medium">+4 new today</p>
                     </div>
                 </nav>
 
                 {/* Footer */}
-                <div className="border-t border-white/10 p-4 space-y-2">
-                    <button className="w-full flex items-center gap-3 px-4 py-2.5 rounded-xl text-slate-200 hover:bg-white/10 transition-colors">
+                <div className="border-t border-slate-200 p-4 space-y-2">
+                    <button className="w-full flex items-center gap-3 px-4 py-2.5 rounded-xl text-slate-800 hover:bg-slate-200 transition-colors">
                         <Settings size={18} />
-                        <span className="text-sm">Settings</span>
+                        <span className="text-sm font-medium">Settings</span>
                     </button>
-                    <button className="w-full flex items-center gap-3 px-4 py-2.5 rounded-xl text-slate-200 hover:bg-rose-500 transition-colors">
+                    <button className="w-full flex items-center gap-3 px-4 py-2.5 rounded-xl text-slate-800 hover:bg-rose-100 transition-colors">
                         <LogOut size={18} />
-                        <span className="text-sm">Logout</span>
+                        <span className="text-sm font-medium">Logout</span>
                     </button>
                 </div>
             </div>
